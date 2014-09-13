@@ -2,8 +2,8 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   <script src="scripts/jquery-2.1.1.min.js"></script>
-	<script src="scripts/jquery-ui-1.9.2.min.js"></script>
-	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="scripts/words.js"></script>
+  <script type="text/javascript" src="scripts/main.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
 	<!-- // <script type="text/javascript" src="scripts/nodeload.js"></script> -->
 
@@ -16,18 +16,18 @@
   <div id="second_body">
     <div id="ul_div">
       <ul>
-        <li> Home </li> |
-        <li>About </li> |
-        <li>Contact </li> |
-        <li>Random </li>
+        <li>Home</li> |
+        <li>About</li> |
+        <li>Contact</li> |
+        <li>Random</li>
       </ul>
     </div>
-    <form onsubmit="submittedNumberParagraphs(numberOfPs); return false">
-      Number of Paragraphs: <input type="text" onkeyup="verifyNumber(this)"/>
+    <form onsubmit="try {renderIpsum(); return false;} catch (e) { return false; }">
+      Number of Paragraphs: <input class="numParagraphs" type="text"/>
     </form>
-    <div id="ipsum"></div>
+    <div class="ipsum"></div>
 
   </div>
-<span id="space_filler">.</span>
+<span id="space_filler">&nbsp;</span>
 </body>
 </html>
