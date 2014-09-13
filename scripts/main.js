@@ -8,43 +8,8 @@
 //         });
 //     });
 // });
-var array=["Ashlyn","Pinilla","Art Crafters","703 Beville Rd","Opa Locka","Miami-Dade","FL","33054","305-670-9628","305-857-5489","apinilla@cox.net","http://www.artcrafters.com","stuff","Dallas","Texas","Dallas","Dallas-Fort Worth", "widget", "ruby", "goodies", "java", "emerald", "etc","Hampden","Massachusetts","Agawam","Springfield","Montgomery","Pennsylvania","Harleysville","Philadelphia","Weakley","Tennessee","Martin","Martin","James","Butt","Benton, John B Jr","6649 N Blue Gum St","New Orleans","Orleans","LA","70116","504-621-8927","504-845-1427","jbutt@gmail.com","http://www.bentonjohnbjr.com","Josephine","Darakjy","Chanay, Jeffrey A Esq","4 B Blue Ridge Blvd","Brighton","Livingston","MI","48116","810-292-9388","810-374-9840","josephine_darakjy@darakjy.org","http://www.chanayjeffreyaesq.com","Art","Venere","Chemel, James L Cpa","8 W Cerritos Ave #54","Bridgeport","Gloucester","NJ","08014","856-636-8749","856-264-4130","art@venere.org","http://www.chemeljameslcpa.com","Leota","Dilliard","Commercial Press","7 W Jackson Blvd","San Jose","Santa Clara","CA","95111","408-752-3500","408-813-1105","leota@hotmail.com","http://www.commercialpress.com","Minna","Amigon","Dorl, James J Esq","2371 Jerrold Ave","Kulpsville","Montgomery","PA","19443","215-874-1229","215-422-8694","minna_amigon@yahoo.com","http://www.dorljamesjesq.com","Graciela","Ruta","Buckley Miller & Wright","98 Connecticut Ave Nw","Chagrin Falls","Geauga","OH",44023,"440-780-8425","440-579-7763","gruta@cox.net","http://www.buckleymillerwright.com","Cammy","Albares","Rousseaux, Michael Esq","56 E Morehead St","Laredo","Webb","TX","78045","956-537-6195","956-841-7216","calbares@gmail.com","http://www.rousseauxmichaelesq.com","Mattie","Poquette","Century Communications","73 State Road 434 E","Phoenix","Maricopa","AZ","85013","602-277-4385","602-953-6360","mattie@aol.com","http://www.centurycommunications.com","Viola","Bitsuie","Burton & Davis","70 Mechanic St","Northridge","Los Angeles","CA","91325","818-864-4875","818-481-5787","viola@gmail.com","http://www.burtondavis.com"]
-// var ipsum_endings = ["ē","ērum","uī","ua","uum","ia","ium","ēs","ibus","ōrum","ō","um","ārum","us","ae","īs","ās"];
-var ipsumEndings = ["e","erum","ui","ua","uum","ia","ium","es","ibus","orum","o","um","arum","us","ae","is","as"];
-var numberOfPs;
-function verifyNumber(letterOrNumber) {
-  var invalidChars = /[^0-9]/gi
-  if(invalidChars.test(letterOrNumber.value)) {
-    letterOrNumber.value = letterOrNumber.value.replace(invalidChars,"");
-    $("input").effect("highlight",{color:"#D46A6A"},3000);
-  }
-  numberOfPs = $("input").val();;
-}
 
-function submittedNumberParagraphs(numberOfParagraphs,arrayName) {
-
-  for (i = 0; i < numberOfParagraphs; i++) {
-    randomIpsum = "";
-    for (i = 0; i < getRandomNumber(75,150); i++){
-      randomIpsum += ipsumize(arrayName[getRandomNumber(0,arrayName.length)]) + " "
-    }
-    var newParagraph = document.createElement('p');
-    newParagraph.textContent = randomIpsum;
-    document.getElementById("ipsum").appendChild(newParagraph);
-
-  }
-}
-
-function ipsumize(nonIpsumWord) {
-  nonIpsumWord += ipsumEndings[getRandomNumber(0,ipsumEndings.length)];
-  return nonIpsumWord;
-}
-
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-urbanDictionaryArray=["ass",
+var urbanDictionaryArray=["ass",
 "Alaskan Firedragon",
 "Andre",
 "anal",
@@ -3684,3 +3649,50 @@ urbanDictionaryArray=["ass",
 "zorz",
 "Zachary Quinto",
 "zoobie"]
+
+// var ipsum_endings = ["ē","ērum","uī","ua","uum","ia","ium","ēs","ibus","ōrum","ō","um","ārum","us","ae","īs","ās"];
+var ipsumEndings = ["e","erum","ui","ua","uum","ia","ium","es","ibus","orum","o","um","arum","us","ae","is","as"];
+var numberOfPs;
+function verifyNumber(letterOrNumber) {
+  var invalidChars = /[^0-9]/gi
+  if(invalidChars.test(letterOrNumber.value)) {
+    letterOrNumber.value = letterOrNumber.value.replace(invalidChars,"");
+    $("input").effect("highlight",{color:"#D46A6A"},3000);
+  }
+  numberOfPs = $("input").val();;
+}
+
+function submittedNumberParagraphs(numberOfParagraphs) {
+
+  for (i = 0; i < numberOfParagraphs; i++) {
+    var randomIpsum = "";
+    for (i = 0; i < getRandomNumber(75,150); i++){
+      randomIpsum += ipsumize(urbanDictionaryArray[getRandomNumber(0,urbanDictionaryArray.length)])
+      if (getRandomNumber(0, 10) == 0) {
+        randomIpsum += "."
+      }
+      randomIpsum += " "
+    }
+    randomIpsum = randomIpsum.toLowerCase();
+    randomIpsum = randomIpsum.replace(/\. ([a-z])/g, function(match, gp1) {
+      return ". " + gp1.toUpperCase();
+    });
+    randomIpsum = randomIpsum[0].toUpperCase() + randomIpsum.slice(1, randomIpsum.length-2);
+    randomIpsum += "."
+
+    var newParagraph = document.createElement('p');
+    newParagraph.textContent = randomIpsum;
+    document.getElementById("ipsum").appendChild(newParagraph);
+
+  }
+}
+
+function ipsumize(nonIpsumWord) {
+  nonIpsumWord += ipsumEndings[getRandomNumber(0,ipsumEndings.length - 1)];
+  return nonIpsumWord;
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
