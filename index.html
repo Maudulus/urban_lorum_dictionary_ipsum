@@ -4,16 +4,28 @@
   <script src="scripts/jquery-2.1.1.min.js"></script>
 	<script src="scripts/jquery-ui-1.9.2.min.js"></script>
 	<script type="text/javascript" src="scripts/main.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
 	<!-- // <script type="text/javascript" src="scripts/nodeload.js"></script> -->
 
 
 	<title>Urban Dictionary Ipsum</title>
 </head>
 <body>
-	<h1>Urban Dictionary Ipsum</h1>
-  <form onsubmit="submittedNumberParagraphs(numberOfPs); return false">
-    Number of Paragraphs: <input type="text" onkeyup="verifyNumber(this)"/>
-  </form>
-  <div id="ipsum"></div>
+  <div><img src="images/ud.png"></div>
+
+  <div id="second_body">
+    <div id="ul_div">
+      <ul>
+        <li> Home </li> |
+        <li>About </li> |
+        <li>Contact </li> |
+        <li>Random </li>
+      </ul>
+    </div>
+    <form onsubmit="submittedNumberParagraphs(numberOfPs); return false">
+      Number of Paragraphs: <input type="text" onkeyup="verifyNumber(this)"/>
+    </form>
+    <div id="ipsum"></div>
+  </div>
 </body>
 </html>

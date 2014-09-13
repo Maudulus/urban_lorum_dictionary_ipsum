@@ -1,14 +1,64 @@
 body {
   color: black;
   background: #4E7CA0;
+  font-family: 'Montserrat';
+  height: 100%;
 }
+
 input[type="text"] {
   width: 40px;
+  font-family: 'Montserrat';
 }
-h1 {
+
+img {
+  margin-bottom: 0;
+  padding: 0;
   margin-left: 20%;
-  margin-top: 3%;
+  margin-top: 1%;
+  width: 400px;
+  text-align: center;
+  background: #FFC652;
+  border-bottom: 10px solid black;
 }
+
 #second_body {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
   background: #F1F2F0;
+  height: 95%;
+}
+
+#ul_div{
+  width: 100%;
+  background:#FFC652;
+}
+
+ul {
+  text-align: center;
+  list-style-type: none;
+  background: #FFC652;
+  font-size: 28px;
+  /*margin-left: 15%;*/
+  margin-top: 0;
+  padding: 10px 0 10px 0;
+  margin-bottom: 0;
+  margin-right: 20%;
+  margin-left: auto;
+}
+
+ul li {
+  display: inline-block;
+  text-align: center;
+  border-bottom: 3px solid gray;
+}
+
+ul li:hover {
+  border-bottom: 3px solid white;
+}
+
+p {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
 }
