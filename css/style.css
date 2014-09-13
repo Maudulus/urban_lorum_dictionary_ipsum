@@ -61,4 +61,15 @@ p {
   width: 85%;
   margin-right: auto;
   margin-left: auto;
+  background: #F1F2F0;
+  margin-bottom:
+}
+
+#ipsum {
+  width: 100%;
+  background: #F1F2F0;
+  margin-bottom: 30px;
+}
+body #space_filler {
+  color: #4E7CA0:
 }
