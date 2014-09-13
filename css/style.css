@@ -39,7 +39,6 @@ ul {
   list-style-type: none;
   background: #FFC652;
   font-size: 28px;
-  /*margin-left: 15%;*/
   margin-top: 0;
   padding: 10px 0 10px 0;
   margin-bottom: 0;
@@ -62,14 +61,22 @@ p {
   margin-right: auto;
   margin-left: auto;
   background: #F1F2F0;
-  margin-bottom:
 }
 
 #ipsum {
   width: 100%;
   background: #F1F2F0;
   margin-bottom: 30px;
+  height: 100%;
 }
+
 body #space_filler {
-  color: #4E7CA0:
+  color: #4E7CA0;
+  margin-top: 15px;
+  clear: both;
+
+}
+
+#background_setter {
+  background: #F1F2F0;
 }
