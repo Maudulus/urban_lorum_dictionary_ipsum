@@ -3654,45 +3654,61 @@ var urbanDictionaryArray=["ass",
 var ipsumEndings = ["e","erum","ui","ua","uum","ia","ium","es","ibus","orum","o","um","arum","us","ae","is","as"];
 var numberOfPs;
 function verifyNumber(letterOrNumber) {
+  console.log("verifyNumber")
   var invalidChars = /[^0-9]/gi
   if(invalidChars.test(letterOrNumber.value)) {
     letterOrNumber.value = letterOrNumber.value.replace(invalidChars,"");
     $("input").effect("highlight",{color:"#D46A6A"},3000);
   }
-  numberOfPs = $("input").val();;
+  numberOfPs = $("input").val();
 }
 
 function submittedNumberParagraphs(numberOfParagraphs) {
-
-  for (i = 0; i < numberOfParagraphs; i++) {
+  alert(numberOfParagraphs);
+  for (i = 0; i < parseInt(numberOfParagraphs); i++) {
     var randomIpsum = "";
-    for (i = 0; i < getRandomNumber(75,150); i++){
+    for (i = 0; i < getRandomNumber(75,100); i++){
       randomIpsum += ipsumize(urbanDictionaryArray[getRandomNumber(0,urbanDictionaryArray.length)])
       if (getRandomNumber(0, 10) == 0) {
         randomIpsum += "."
       }
       randomIpsum += " "
     }
+      alert("passed ipsum generator")
     randomIpsum = randomIpsum.toLowerCase();
     randomIpsum = randomIpsum.replace(/\. ([a-z])/g, function(match, gp1) {
       return ". " + gp1.toUpperCase();
     });
     randomIpsum = randomIpsum[0].toUpperCase() + randomIpsum.slice(1, randomIpsum.length-2);
     randomIpsum += "."
-
+    try {
+      var parent = document.getElementById("ipsum");
+      var child = document.getElementById("paragraph");
+      parent.removeChild(child);
+    } catch(e) {
+      console.log(e);
+    }
     var newParagraph = document.createElement('p');
+    newParagraph.setAttribute("id", "paragraph");
     newParagraph.textContent = randomIpsum;
     document.getElementById("ipsum").appendChild(newParagraph);
-
   }
 }
 
+function ipsum_generator(randomIpsum) {
+  alert(randomIpsum);
+
+}
+
 function ipsumize(nonIpsumWord) {
+  console.log("ipsumize");
+
   nonIpsumWord += ipsumEndings[getRandomNumber(0,ipsumEndings.length - 1)];
   return nonIpsumWord;
 }
 
 function getRandomNumber(min, max) {
+  console.log(getRandomNumber)
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
