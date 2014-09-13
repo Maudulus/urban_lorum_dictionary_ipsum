@@ -1,6 +1,14 @@
 body {
-
+  color: black;
+  background: #4E7CA0;
 }
 input[type="text"] {
   width: 40px;
+}
+h1 {
+  margin-left: 20%;
+  margin-top: 3%;
+}
+#second_body {
+  background: #F1F2F0;
 }
