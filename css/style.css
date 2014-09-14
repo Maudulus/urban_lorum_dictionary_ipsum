@@ -115,7 +115,7 @@ h6 {
 }
 
 h6 span {
-  color: gray;
+  color: #11073B;
   font-size: 15px;
 }
 
@@ -125,5 +125,11 @@ h6 span:hover {
 
 #contact img {
   border-radius: 3px;
+}
+
+.hidden span {
+  font-weight: bold;
+  font-size: 20px;
+  color: #11073B;
 }
 
