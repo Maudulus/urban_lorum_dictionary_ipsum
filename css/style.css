@@ -49,7 +49,7 @@ ul {
 ul li {
   display: inline-block;
   text-align: center;
-  border-bottom: 3px solid gray;
+  border-bottom: 3px solid #464646;
 }
 
 ul li:hover {
@@ -63,6 +63,10 @@ p {
   background: #F1F2F0;
 }
 
+p:last-child {
+margin-bottom: 20px;
+padding-bottom: 15px;
+}
 #ipsum {
   width: 100%;
   background: #F1F2F0;
@@ -80,3 +84,46 @@ body #space_filler {
 #background_setter {
   background: #F1F2F0;
 }
+
+a {
+  text-decoration:none;
+  color:black ;
+}
+
+.hidden{
+  display: none;
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+  background: #F1F2F0;
+  height: 23%;
+}
+
+.our_photos{
+  width: 100px;
+  height: auto;
+}
+
+#pic_div{
+  margin-left: 12%;
+  margin-top: -7%;
+  margin-right: auto;
+}
+
+h6 {
+  text-align: center;
+}
+
+h6 span {
+  color: gray;
+  font-size: 15px;
+}
+
+h6 span:hover {
+  color: #464646;
+}
+
+#contact img {
+  border-radius: 3px;
+}
+

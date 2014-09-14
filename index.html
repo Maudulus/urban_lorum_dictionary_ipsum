@@ -5,8 +5,6 @@
 	<script type="text/javascript" src="scripts/words.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
   <link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
-	<!-- // <script type="text/javascript" src="scripts/nodeload.js"></script> -->
-
 
 	<title>Urban Dictionary Ipsum</title>
 </head>
@@ -16,11 +14,29 @@
   <div id="second_body">
     <div id="ul_div">
       <ul>
-        <li>Home</li> |
-        <li>About</li> |
-        <li>Contact</li> |
-        <li>Random</li>
-      </ul>
+        <li><a href="">Home</a></li> |
+        <li><a href="" onclick="showDiv('#about');return false">About</a></li> |
+        <li><a href="" onclick="showDiv('#contact');return false">Contact</a></li> |
+       </ul>
+    </div>
+    <div class="hidden" id="about">
+      <p>Urban Ipsum generates Urban Dictionary Lorem Ipsum.</p>
+
+      <p>Example sentence: "Soci fruitflyae break your crayonsium if you willae kirsteno."</p>
+
+      <p>If you need quality and amusing text to fill the empty space on your site, then use Urban Ipsum!</p>
+    </div>
+    <div class="hidden" id="contact">
+
+      <h6>Created by <span><a href="https://www.linkedin.com/in/jacobmaude" target="_blank">Jacob Maude</a></span> and <span><a href="https://www.linkedin.com/in/brandonhorst" target="_blank">Brandon Horst</a></span></h6>
+
+      <h6><a href="https://github.com/Modsky1/urban_lorum_dictionary_ipsum" target="_blank">Github</a></h6>
+      <div id="pic_div">
+        <a href="https://github.com/modsky1" target="_blank"><img src="https://avatars0.githubusercontent.com/u/6404876?s=460" alt="modsky1" class="our_photos" id="maude_pic"></a>
+
+        <a href="https://github.com/brandonhorst" target="_blank"><img src="https://avatars3.githubusercontent.com/u/1938545?v=2&s=400" alt="brandonhorst" class="our_photos" id="brandon_pic"></a>
+      </div>
+
     </div>
     <form onsubmit="try {renderIpsum(); return false;} catch (e) { return false; }">
       Number of Paragraphs: <input class="numParagraphs" type="text"/>

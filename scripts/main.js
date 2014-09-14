@@ -64,3 +64,7 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function showDiv(showType) {
+  $('.hidden').hide();
+  $(showType).show();
+}
